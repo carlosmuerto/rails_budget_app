@@ -1,0 +1,15 @@
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<header>
+	<%= link_to "BUDGET ON RAILS", root_path %>
+	<nav>
+		<% if user_signed_in? %>
+			<div class="nav-item">
+				<%= link_to "My Profile", edit_user_registration_path  %>
+			</div>
+			<div class="nav-item">
+				<%= button_to "Log out", destroy_user_session_path, method: :delete, class: "log-out-btn" %>
+			</div>
+		<% end %>
+	</nav>
+</header>
