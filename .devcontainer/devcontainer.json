@@ -15,18 +15,18 @@
 		3000
 	],
 	
-	// "customizations": {
-	// 	"vscode": {
-	// 		"extensions": [
-	// 			"rebornix.ruby",
-	// 			"mhutchie.git-graph",
-	// 			"castwide.solargraph",
-	// 			"LoranKloeze.ruby-rubocop-revived",
-	// 			"stylelint.vscode-stylelint",
-	// 			"GitHub.vscode-pull-request-github"
-	// 		]
-	// 	}
-	// },
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rebornix.ruby",
+				"mhutchie.git-graph",
+				"castwide.solargraph",
+				"LoranKloeze.ruby-rubocop-revived",
+				"stylelint.vscode-stylelint",
+				"GitHub.vscode-pull-request-github"
+			]
+		}
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
