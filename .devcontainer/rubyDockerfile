@@ -1,0 +1,24 @@
+FROM ruby:3.1.2-bullseye
+
+# # install and postgre dependencies
+RUN apt-get update -qq
+RUN apt-get install -y nodejs
+RUN apt-get install -y npm
+RUN apt-get install -y postgresql-client
+RUN apt-get install -y yarn
+
+# Install Rails
+RUN gem install rails
+
+# # INSTALL zsh
+RUN apt-get install -y zsh zplug
+
+# Install oh-my-zsh
+RUN RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+
+# SET DEFAULT TERMINAL zsh
+RUN chsh -s $(which zsh)
+
+# Clone powerlevel10k
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
