@@ -3,6 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# handle Authorization
+gem 'cancancan'
+
+# handle pagination
+gem 'kaminari'
+
+# handle auth
+gem 'devise'
+
+# sass precompliler
+gem 'sass-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -61,6 +73,15 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'spring'
+
+  # Spring for rspec
+  gem 'spring-commands-rspec'
+
+  # ruby linters
+  gem 'rubocop'
+
+  # ruby intellisense
+  gem 'solargraph'
 end
 
