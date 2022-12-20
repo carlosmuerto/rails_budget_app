@@ -8,13 +8,23 @@ class EntitiesController < ApplicationController
   def show; end
 
   # GET /entities/new
-  def new; end
+  def new
+    @groups = Group.all
+  end
 
   # GET /entities/1/edit
-  def edit; end
+  def edit
+    @groups = Group.all
+  end
 
   # POST /entities or /entities.json
   def create
+    @entity.author = current_user
+
+    @entity.groups = params.require(:entity).permit({ groups: [] })[:groups].map do |group_id|
+      Group.find(group_id)
+    end
+
     respond_to do |format|
       if @entity.save
         format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully created.' }
@@ -28,6 +38,10 @@ class EntitiesController < ApplicationController
 
   # PATCH/PUT /entities/1 or /entities/1.json
   def update
+    @entity.groups = params.require(:entity).permit({ groups: [] })[:groups].map do |group_id|
+      Group.find(group_id)
+    end
+
     respond_to do |format|
       if @entity.update(entity_params)
         format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully updated.' }
@@ -53,6 +67,6 @@ class EntitiesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def entity_params
-    params.require(:entity).permit(:name, :amount, :user_id)
+    params.require(:entity).permit(:name, :amount)
   end
 end

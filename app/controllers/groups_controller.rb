@@ -8,13 +8,16 @@ class GroupsController < ApplicationController
   def show; end
 
   # GET /groups/new
-  def new; end
+  def new
+    @group = Group.new
+  end
 
   # GET /groups/1/edit
   def edit; end
 
   # POST /groups or /groups.json
   def create
+    @group.author = current_user
     respond_to do |format|
       if @group.save
         format.html { redirect_to group_url(@group), notice: 'Group was successfully created.' }
@@ -53,6 +56,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.require(:group).permit(:name, :icon, :user_id)
+    params.require(:group).permit(:name, :icon)
   end
 end
