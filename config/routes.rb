@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :groups
   resources :entities
   get 'splash/index'
   devise_for :users, :controllers => {:registrations => "registrations"}
