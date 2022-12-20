@@ -3,6 +3,12 @@
 	<nav>
 		<% if user_signed_in? %>
 			<div class="nav-item">
+				<%= link_to "My Categories", groups_path  %>
+			</div>
+			<div class="nav-item">
+				<%= link_to "My transactions", entities_path  %>
+			</div>
+			<div class="nav-item">
 				<%= link_to "My Profile", edit_user_registration_path  %>
 			</div>
 			<div class="nav-item">
