@@ -5,6 +5,7 @@ class Entity < ApplicationRecord
 
   validates :name, presence: true
   validates :amount, presence: true
+  validates :groups, length: { minimum: 1 }
 
   # TODO: validate has at lest une group
 end
