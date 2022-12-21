@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :find_group, except: :index
+  before_action :find_groups, only: :index
   load_and_authorize_resource
 
   # GET /groups or /groups.json
@@ -53,6 +56,14 @@ class GroupsController < ApplicationController
   end
 
   private
+
+  def find_group
+    @group = Group.accessible_by(current_ability).find(params[:id])
+  end
+
+  def find_groups
+    @groups = Group.accessible_by(current_ability).all
+  end
 
   # Only allow a list of trusted parameters through.
   def group_params

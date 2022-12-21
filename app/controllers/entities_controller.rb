@@ -1,4 +1,7 @@
 class EntitiesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :find_entity, except: :index
+  before_action :find_entities, only: :index
   load_and_authorize_resource
 
   # GET /entities or /entities.json
@@ -67,6 +70,14 @@ class EntitiesController < ApplicationController
   end
 
   private
+
+  def find_entity
+    @entity = Entity.accessible_by(current_ability).find(params[:id])
+  end
+
+  def find_entities
+    @entities = Entity.accessible_by(current_ability).includes([:groups]).all
+  end
 
   # Only allow a list of trusted parameters through.
   def entity_params

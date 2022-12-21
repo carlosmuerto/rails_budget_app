@@ -85,4 +85,7 @@ group :development do
 
   # ruby intellisense
   gem 'solargraph'
+
+  # solve n+1 problems
+  gem 'bullet'
 end

@@ -9,9 +9,14 @@
     <%= group.icon %>
   </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= group.user_id %>
-  </p>
+  <div>
+    <strong>entities count:</strong>
+    <%= group.entities.count %>
+    <% group.entities.each do |entity| %>
+      <p><%= entity.name %></p>
+      <p><%= entity.amount %></p>
+    <% end %>
+  </div>
+  
 
 </div>

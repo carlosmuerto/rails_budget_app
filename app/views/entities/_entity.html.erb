@@ -9,12 +9,8 @@
     <%= entity.amount %>
   </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= entity.user_id %>
-  </p>
-
   <div>
+    <strong>groups count:</strong>
     <%= entity.groups.count %>
     <% entity.groups.each do |group| %>
       <p><%= group.name %></p>
