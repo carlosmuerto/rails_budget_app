@@ -44,4 +44,30 @@ RSpec.describe Entity, type: :model do
     entity.groups = []
     expect(entity).to_not be_valid
   end
+
+  context 'once save' do
+    before do
+      entity.save
+    end
+
+    it 'each entity group should have the entity in its entities' do
+      entity.groups.each do |group|
+        expect(group.entities).to include(entity)
+      end
+    end
+
+    it 'on destroy each entity group should not have the entity in its entities' do
+      groups = entity.groups
+
+      groups.each do |group|
+        expect(group.entities).to include(entity)
+      end
+
+      entity.destroy
+
+      groups.each do |group|
+        expect(group.entities).to_not include(entity)
+      end
+    end
+  end
 end
