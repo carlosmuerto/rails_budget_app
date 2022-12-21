@@ -90,3 +90,36 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 end
+
+def resource_name
+  :user
+end
+
+def resource
+  @resource ||= User.new
+end
+
+def devise_mapping
+  @devise_mapping ||= Devise.mappings[:user]
+end
+
+def test_user
+  User.create!(name: 'test_user', email: 'test_user@gmail.com', password: '12345678')
+end
+
+def test_group(author, prefix)
+  Group.create!(
+    name: "#{prefix}_test_group_name",
+    icon: "#{prefix}_test_group_Icon",
+    author:
+  )
+end
+
+def test_entity(author, prefix, groups)
+  Entity.create!(
+    name: "#{prefix}_test_entity_name",
+    amount: '9.99',
+    author:,
+    groups:
+  )
+end
