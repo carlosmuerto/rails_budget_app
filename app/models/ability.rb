@@ -5,8 +5,8 @@ class Ability
     return unless user.present?
 
     can %i[read update], User, id: user.id
-    can %i[read update create destroy], Group, author: user.id
-    can %i[read update create destroy], Entity, author: user.id
+    can %i[read update create destroy], Group, author: user
+    can %i[read update create destroy], Entity, author: user
     can %i[read update create destroy], GroupEntity
     # can %i[read update create destroy], GroupEntity, [
     #   group: { user: },

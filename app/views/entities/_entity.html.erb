@@ -14,4 +14,11 @@
     <%= entity.user_id %>
   </p>
 
+  <div>
+    <%= entity.groups.count %>
+    <% entity.groups.each do |group| %>
+      <p><%= group.name %></p>
+    <% end %>
+  </div>
+
 </div>
