@@ -1,26 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe 'entities/index', type: :view do
+  let!(:user) do
+    test_user
+  end
+
+  let!(:groups) do
+    [
+      test_group(user, 'A'),
+      test_group(user, 'B')
+    ]
+  end
+
   before(:each) do
     assign(:entities, [
-             Entity.create!(
-               name: 'Name',
-               amount: '9.99',
-               user: nil
-             ),
-             Entity.create!(
-               name: 'Name',
-               amount: '9.99',
-               user: nil
-             )
+             test_entity(user, 'A', groups),
+             test_entity(user, 'B', groups)
            ])
+    sign_in user
+    render
   end
 
   it 'renders a list of entities' do
-    render
-    cell_selector = Rails::VERSION::STRING >= '7' ? 'div>p' : 'tr>td'
-    assert_select cell_selector, text: Regexp.new('Name'.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new('9.99'.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new(nil.to_s), count: 2
+    expect(rendered).to match(/Entities/)
   end
+
+  it 'chech for print more'
 end

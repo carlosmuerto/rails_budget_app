@@ -20,6 +20,7 @@ class EntitiesController < ApplicationController
   # POST /entities or /entities.json
   def create
     @entity.author = current_user
+    @groups = Group.all
 
     @entity.groups = params.require(:entity).permit({ groups: [] })[:groups].map do |group_id|
       Group.find(group_id)
@@ -41,6 +42,8 @@ class EntitiesController < ApplicationController
     @entity.groups = params.require(:entity).permit({ groups: [] })[:groups].map do |group_id|
       Group.find(group_id)
     end
+
+    @groups = Group.all
 
     respond_to do |format|
       if @entity.update(entity_params)

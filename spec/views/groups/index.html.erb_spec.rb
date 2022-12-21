@@ -1,26 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe 'groups/index', type: :view do
-  before(:each) do
-    assign(:groups, [
-             Group.create!(
-               name: 'Name',
-               icon: 'Icon',
-               user: nil
-             ),
-             Group.create!(
-               name: 'Name',
-               icon: 'Icon',
-               user: nil
-             )
-           ])
+  let!(:user) do
+    test_user
   end
 
-  it 'renders a list of groups' do
-    render
-    cell_selector = Rails::VERSION::STRING >= '7' ? 'div>p' : 'tr>td'
-    assert_select cell_selector, text: Regexp.new('Name'.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new('Icon'.to_s), count: 2
-    assert_select cell_selector, text: Regexp.new(nil.to_s), count: 2
+  let!(:groups) do
+    [
+      test_group(user, 'A'),
+      test_group(user, 'B')
+    ]
   end
+  before(:each) do
+    assign(:groups, groups)
+    sign_in user
+    render
+  end
+
+  it 'renders a list of Groups' do
+    expect(rendered).to match(/Groups/)
+  end
+
+  it 'chech for print more'
 end

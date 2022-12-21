@@ -1,23 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe 'entities/new', type: :view do
+  let!(:user) do
+    test_user
+  end
+
+  let!(:groups) do
+    [
+      test_group(user, 'A'),
+      test_group(user, 'B')
+    ]
+  end
+
   before(:each) do
-    assign(:entity, Entity.new(
-                      name: 'MyString',
-                      amount: '9.99',
-                      user: nil
-                    ))
+    assign(:entity, Entity.new)
+    assign(:groups, Group.all)
+    render
   end
 
   it 'renders new entity form' do
-    render
-
     assert_select 'form[action=?][method=?]', entities_path, 'post' do
       assert_select 'input[name=?]', 'entity[name]'
 
       assert_select 'input[name=?]', 'entity[amount]'
-
-      assert_select 'input[name=?]', 'entity[user_id]'
     end
   end
+
+  it 'chech for print more'
 end

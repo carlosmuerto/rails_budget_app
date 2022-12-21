@@ -3,7 +3,7 @@ class SplashController < ApplicationController
   before_action :check_signed_in
 
   def check_signed_in
-    redirect_to users_path if signed_in?
+    redirect_to entities_path if signed_in?
   end
 
   def index; end
