@@ -15,13 +15,31 @@ require 'rails_helper'
 RSpec.describe '/groups', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Group. As you add validations to Group, be sure to
-  # adjust the attributes here as well.
+  # adjust the attributes here as well.include Devise::Test::IntegrationHelpers
+  include Devise::Test::IntegrationHelpers
+
+  let!(:user) do
+    test_user
+  end
+
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+    {
+      name: 'test_group_name',
+      icon: 'test_group_Icon',
+      author: user
+    }
   end
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    {
+      name: '',
+      icon: '',
+      author: user
+    }
+  end
+
+  before(:each) do
+    sign_in user
   end
 
   describe 'GET /index' do
@@ -86,14 +104,18 @@ RSpec.describe '/groups', type: :request do
   describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
-        skip('Add a hash of attributes valid for your model')
+        {
+          name: 'new_test_group_name',
+          icon: 'new_test_group_Icon'
+        }
       end
 
       it 'updates the requested group' do
         group = Group.create! valid_attributes
         patch group_url(group), params: { group: new_attributes }
         group.reload
-        skip('Add assertions for updated state')
+        expect(group.name).to eq(group[:name])
+        expect(group.icon).to eq(group[:icon])
       end
 
       it 'redirects to the group' do
