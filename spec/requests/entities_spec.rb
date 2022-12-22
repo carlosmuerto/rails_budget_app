@@ -14,7 +14,7 @@ RSpec.describe '/entities', type: :request do
     ]
   end
 
-  let(:valid_attributes) do
+  let!(:valid_attributes) do
     {
       name: 'test_entity_name',
       amount: '9.99',
@@ -23,13 +23,13 @@ RSpec.describe '/entities', type: :request do
     }
   end
 
-  let(:valid_attributes_params) do
+  let!(:valid_attributes_params) do
     params = valid_attributes.clone
     params[:groups] = groups.map(&:id)
     params
   end
 
-  let(:valid_new_attributes_params) do
+  let!(:valid_new_attributes_params) do
     {
       name: 'test_new_entity_name',
       amount: '11.11',
@@ -37,19 +37,17 @@ RSpec.describe '/entities', type: :request do
     }
   end
 
-  let(:invalid_attributes) do
+  let!(:invalid_attributes) do
     invalid = valid_attributes.clone
     invalid[:name] = ''
     invalid
   end
 
-  let(:invalid_attributes_params) do
+  let!(:invalid_attributes_params) do
     invalid = valid_attributes_params.clone
     invalid[:name] = ''
     invalid
   end
-
-  let(:user) { User.create(name: 'ruth', email: 'ruth@mail.com', password: '12345678') }
 
   before(:each) do
     sign_in user
