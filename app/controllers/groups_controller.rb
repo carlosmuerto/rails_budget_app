@@ -58,7 +58,7 @@ class GroupsController < ApplicationController
   private
 
   def find_group
-    @group = Group.accessible_by(current_ability).find(params[:id])
+    @group = Group.accessible_by(current_ability).includes([:entities]).find(params[:id])
   end
 
   def find_groups

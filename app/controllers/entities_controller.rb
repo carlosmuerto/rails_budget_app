@@ -72,7 +72,7 @@ class EntitiesController < ApplicationController
   private
 
   def find_entity
-    @entity = Entity.accessible_by(current_ability).find(params[:id])
+    @entity = Entity.accessible_by(current_ability).includes([:groups]).find(params[:id])
   end
 
   def find_entities
