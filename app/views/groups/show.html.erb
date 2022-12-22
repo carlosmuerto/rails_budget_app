@@ -1,6 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<div id="<%= dom_id @group %>">
+  <p>
+    <strong>Name:</strong>
+    <%= @group.name %>
+  </p>
 
-<%= render @group %>
+  <p>
+    <strong>Icon:</strong>
+    <%= @group.icon %>
+  </p>
+  <p>
+    <strong>total amount:</strong>
+    <%= @group.total_amount %>
+  </p>
+
+  <div>
+    <strong>entities count:</strong>
+    <%= @group.entities.count %>
+    <% @group.entities.each do |entity| %>
+      <p><%= entity.name %></p>
+      <p><%= entity.amount %></p>
+    <% end %>
+  </div>
+  
+
+</div>
+
 
 <div>
   <%= link_to "Edit this group", edit_group_path(@group) %> |

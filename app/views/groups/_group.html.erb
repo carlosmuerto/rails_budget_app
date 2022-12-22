@@ -16,7 +16,7 @@
   <div>
     <strong>entities count:</strong>
     <%= group.entities.count %>
-    <% group.entities.each do |entity| %>
+    <% group.entities.first(5).each do |entity| %>
       <p><%= entity.name %></p>
       <p><%= entity.amount %></p>
     <% end %>

@@ -1,7 +1,7 @@
 class Entity < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   has_many :group_entity, dependent: :delete_all
-  has_many :groups, through: :group_entity, source: :group
+  has_many :groups, -> { order(created_at: :desc) }, through: :group_entity, source: :group
 
   validates :name, presence: true
   validates :amount, presence: true
