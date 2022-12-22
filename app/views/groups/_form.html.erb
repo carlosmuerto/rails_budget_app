@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+    <%= form.select(:icon, options_for_select(Group::ICONS)) %>
   </div>
 
   <div>
