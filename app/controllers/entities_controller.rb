@@ -12,12 +12,12 @@ class EntitiesController < ApplicationController
 
   # GET /entities/new
   def new
-    @groups = Group.all
+    @groups = Group.accessible_by(current_ability).all
   end
 
   # GET /entities/1/edit
   def edit
-    @groups = Group.all
+    @groups = Group.accessible_by(current_ability).all
   end
 
   # POST /entities or /entities.json

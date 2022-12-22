@@ -25,7 +25,7 @@
     <%= form.label :groups, style: "display: block" %>
     <%= form.select(
       :groups, options_for_select(
-        groups.collect{|c| [c.name, c.id]},
+        groups.collect{|c| ["#{c.icon} #{c.name}", c.id]},
         entity.groups.pluck(:id)
       ),
       {include_hidden: false}, 
