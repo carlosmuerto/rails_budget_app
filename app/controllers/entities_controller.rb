@@ -1,6 +1,6 @@
 class EntitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_entity, except: :index
+  before_action :find_entity, except: %i[index new create]
   before_action :find_entities, only: :index
   load_and_authorize_resource
 

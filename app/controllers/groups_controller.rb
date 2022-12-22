@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_group, except: :index
+  before_action :find_group, except: %i[index new create]
   before_action :find_groups, only: :index
   load_and_authorize_resource
 
@@ -62,7 +62,7 @@ class GroupsController < ApplicationController
   end
 
   def find_groups
-    @groups = Group.accessible_by(current_ability).all
+    @groups = Group.accessible_by(current_ability).includes([:entities]).all
   end
 
   # Only allow a list of trusted parameters through.
