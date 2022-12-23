@@ -32,6 +32,4 @@ RSpec.describe 'entities/edit', type: :view do
       assert_select 'input[name=?]', 'entity[amount]'
     end
   end
-
-  it 'chech for print more'
 end

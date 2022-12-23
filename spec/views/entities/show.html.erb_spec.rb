@@ -22,10 +22,21 @@ RSpec.describe 'entities/show', type: :view do
     render
   end
 
-  it 'renders attributes in <p>' do
-    expect(rendered).to match(/#{entity.name}/)
-    expect(rendered).to match(/#{entity.amount}/)
-  end
+  describe 'renders transaction info' do
+    it 'render transaction name' do
+      expect(rendered).to match(/#{entity.name}/)
+    end
+  
+    it 'render transaction amount' do
+      expect(rendered).to match(/#{entity.amount}/)
+    end
+  
+    it 'render transaction amount' do
+      expect(rendered).to match(/#{entity.amount}/)
+    end
 
-  it 'chech for print more'
+    it 'render transaction create at' do
+      expect(rendered).to match(/#{entity.created_at.to_fs(:short)}/)
+    end
+  end
 end

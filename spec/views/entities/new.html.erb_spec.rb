@@ -18,13 +18,11 @@ RSpec.describe 'entities/new', type: :view do
     render
   end
 
-  it 'renders new entity form' do
+  it 'renders new Transactions form' do
     assert_select 'form[action=?][method=?]', entities_path, 'post' do
       assert_select 'input[name=?]', 'entity[name]'
 
       assert_select 'input[name=?]', 'entity[amount]'
     end
   end
-
-  it 'chech for print more'
 end

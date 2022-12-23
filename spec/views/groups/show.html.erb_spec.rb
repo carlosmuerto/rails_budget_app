@@ -16,11 +16,23 @@ RSpec.describe 'groups/show', type: :view do
     render
   end
 
-  it 'renders attributes in <p>' do
-    render
-    expect(rendered).to match(/#{group.name}/)
-    expect(rendered).to match(/#{group.icon}/)
-  end
 
-  it 'chech for print more'
+
+  describe 'render Category info' do
+    it 'render Category icon' do
+      expect(rendered).to match(/#{group.icon}/)
+    end
+  
+    it 'render Category name' do
+      expect(rendered).to match(/#{group.icon}/)
+    end
+  
+    it 'render Category count entities' do
+      expect(rendered).to match(/#{group.entities.count}/)
+    end
+  
+    it 'render Category total amount' do
+      expect(rendered).to match(/#{group.entities.sum(:amount)}/)
+    end
+  end
 end
