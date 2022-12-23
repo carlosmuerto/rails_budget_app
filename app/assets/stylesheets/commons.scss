@@ -4,7 +4,8 @@ main {
   align-items: stretch;
   gap: 1rem;
 
-  h1 {
+  >h1,
+  >h2 {
     text-align: center;
   }
 
