@@ -1,11 +1,10 @@
-<h1>Transactions</h1>
-
-<%= link_to "New entity", new_entity_path %>
-
-<div id="entities">
-  <% @entities.each do |entity| %>
-    <%= render "entities/preview", entity: entity %>
-  <% end %>
-</div>
-
-<%= paginate @entities %>
+<main class="entities-index">
+  <h1>Transactions</h1>
+  <%= link_to "New entity", new_entity_path %>
+  <div class="entities">
+    <% @groups.each do |group| %>
+      <%= render "entities/preview", entity: entity %>
+    <% end %>
+  </div>
+  <%= paginate @entities %>
+</main>

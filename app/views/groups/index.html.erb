@@ -1,14 +1,10 @@
-<h1>Groups</h1>
-
-<%= link_to "New group", new_group_path %>
-
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
-</div>
-
-<%= paginate @groups %>
+<main class="groups-index">
+  <h1>Categories</h1>
+  <%= link_to "New group", new_group_path %>
+  <div class="groups">
+    <% @groups.each do |group| %>
+      <%= render "groups/preview", group: group %>
+    <% end %>
+  </div>
+  <%= paginate @groups %>
+</main>

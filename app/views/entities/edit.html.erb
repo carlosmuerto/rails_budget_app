@@ -1,10 +1,9 @@
-<h1>Editing entity</h1>
-
-<%= render "form", entity: @entity, groups: @groups %>
-
-<br>
-
-<div>
-  <%= link_to "Show this entity", @entity %> |
-  <%= link_to "Back to entities", entities_path %>
-</div>
+<main class="entity-edit">
+  <h1>Editing <%= @entity.name %></h1>
+  <%= render "form", entity: @entity, groups: @groups %>
+  <div class="links">
+    <div class="show">
+      <%= link_to "Show this entity", @entity %>
+    </div>
+  </div>
+</main>
