@@ -13,10 +13,9 @@ RSpec.describe 'entities/index', type: :view do
   end
 
   before(:each) do
-    assign(:entities, [
-             test_entity(user, 'A', groups),
-             test_entity(user, 'B', groups)
-           ])
+    test_entity(user, 'A', groups)
+    test_entity(user, 'B', groups)
+    assign(:entities, Entity.page)
     sign_in user
     render
   end

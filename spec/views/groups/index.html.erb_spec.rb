@@ -12,7 +12,7 @@ RSpec.describe 'groups/index', type: :view do
     ]
   end
   before(:each) do
-    assign(:groups, groups)
+    assign(:groups, Group.page)
     sign_in user
     render
   end
