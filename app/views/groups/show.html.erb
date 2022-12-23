@@ -1,6 +1,8 @@
 <main id="<%= dom_id @group %>" class="group-show">
   <div class="new-icon">
-    <%= link_to "New entity", new_group_entity_path(@group) %>
+    <%= button_to new_group_entity_path(@group), class: "corner-floating-btn" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    <% end %>
   </div>
   <h1><%= @group.icon %> <%= @group.name %></h1>
 

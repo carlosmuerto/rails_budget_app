@@ -1,6 +1,8 @@
 <main class="entities-index">
   <h1>Transactions</h1>
-  <%= link_to "New entity", new_entity_path %>
+  <%= button_to new_entity_path, class: "corner-floating-btn new-entry-btn" do %>
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  <% end %>
   <div class="entities">
     <% @entities.each do |entity| %>
       <%= render "entities/preview", entity: entity %>

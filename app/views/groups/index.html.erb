@@ -1,6 +1,8 @@
 <main class="groups-index">
   <h1>Categories</h1>
-  <%= link_to "New group", new_group_path %>
+  <%= button_to new_group_path, class: "corner-floating-btn" do %>
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  <% end %>
   <div class="groups">
     <% @groups.each do |group| %>
       <%= render "groups/preview", group: group %>

@@ -44,3 +44,11 @@ body {
   height: 100%;
   cursor: pointer;
 }
+
+.corner-floating-btn {
+  position: fixed;
+	width: 4rem;
+	height: 4rem;
+	bottom: 0.5rem;
+	right: 0.5rem;
+}
