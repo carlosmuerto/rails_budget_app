@@ -13,7 +13,6 @@ $square-length: 4rem;
     align-items: stretch;
     gap: 0.5rem;
 
-
     .name {
       display: flex;
       text-align: center;
@@ -42,14 +41,13 @@ $square-length: 4rem;
         text-align: center;
         line-height: 2rem;
 
-        >* {
+        >button {
           width: 2rem;
           height: 2rem;
           font-size: 1.5rem;
         }
-      }      
+      }
     }
-
   }
 
   .entities {
@@ -69,11 +67,10 @@ $square-length: 4rem;
       justify-content: flex-start;
       padding: 1rem;
       gap: 1rem;
-  
+
       >* {
         width: 100%;
       }
     }
-
   }
 }

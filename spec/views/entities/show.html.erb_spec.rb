@@ -26,11 +26,11 @@ RSpec.describe 'entities/show', type: :view do
     it 'render transaction name' do
       expect(rendered).to match(/#{entity.name}/)
     end
-  
+
     it 'render transaction amount' do
       expect(rendered).to match(/#{entity.amount}/)
     end
-  
+
     it 'render transaction amount' do
       expect(rendered).to match(/#{entity.amount}/)
     end

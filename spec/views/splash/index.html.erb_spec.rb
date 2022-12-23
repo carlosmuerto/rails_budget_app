@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'splash/index.html.erb', type: :view do
-
   before(:each) do
     render
   end
@@ -21,5 +20,4 @@ RSpec.describe 'splash/index.html.erb', type: :view do
   it 'dues not render header' do
     expect(rendered).to_not match(/<header>/)
   end
-   
 end
