@@ -16,10 +16,12 @@
   <div>
     <strong>entities count:</strong>
     <%= @group.entities.count %>
-    <% @group.entities.each do |entity| %>
+    <% @entities.each do |entity| %>
       <p><%= entity.name %></p>
       <p><%= entity.amount %></p>
     <% end %>
+
+    <%= paginate @entities %>
   </div>
   
 

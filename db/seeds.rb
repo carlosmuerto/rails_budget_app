@@ -60,19 +60,19 @@ users.each_with_index do |user, index|
   puts "for user #{user.name} : #{user.id}"
 
   groups = [
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user),
-    create_group("group_#{index}", 'group_a_icon', user)
+    create_group("group_#{index}", '✂️', user),
+    create_group("group_#{index}", '⌚', user),
+    create_group("group_#{index}", '🧹', user),
+    create_group("group_#{index}", '⌛', user),
+    create_group("group_#{index}", '⚡', user),
+    create_group("group_#{index}", '🎲', user),
+    create_group("group_#{index}", '🚘', user),
+    create_group("group_#{index}", '🛒', user),
+    create_group("group_#{index}", '🍕', user),
+    create_group("group_#{index}", '📚', user),
+    create_group("group_#{index}", '🎞️', user),
+    create_group("group_#{index}", '🎶', user),
+    create_group("group_#{index}", '🍎', user)
   ]
 
   puts "  #{groups.count} groups created"

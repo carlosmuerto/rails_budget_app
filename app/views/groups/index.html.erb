@@ -1,5 +1,7 @@
 <h1>Groups</h1>
 
+<%= link_to "New group", new_group_path %>
+
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>
@@ -9,4 +11,4 @@
   <% end %>
 </div>
 
-<%= link_to "New group", new_group_path %>
+<%= paginate @groups %>

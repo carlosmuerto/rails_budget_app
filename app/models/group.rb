@@ -9,6 +9,8 @@ class Group < ApplicationRecord
     greater_than_or_equal_to: 0
   }
 
+  paginates_per 10
+
   ICONS = [
     '✂️', '⌚', '🧹', '⌛', '⚡',
     '🎲', '🚘', '🛒', '🍕', '📚',

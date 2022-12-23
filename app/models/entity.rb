@@ -11,6 +11,8 @@ class Entity < ApplicationRecord
 
   after_destroy :decrement_groups_total_amount
 
+  paginates_per 10
+
   private
 
   def decrement_groups_total_amount
