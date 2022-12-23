@@ -20,7 +20,7 @@ RSpec.describe 'entities/index', type: :view do
     render
   end
 
-  it 'renders a list of entities' do
+  it 'renders a list of Transactions' do
     expect(rendered).to match(/Transactions/)
   end
 
