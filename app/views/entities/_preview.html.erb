@@ -1,7 +1,6 @@
 <div class="entity-preview">
     <div class="name">
         <%= entity.name %>
-        
     </div>
     <div class="amount">
         <%= number_to_currency(entity.amount, options = {}) %>
@@ -12,7 +11,7 @@
     <div class="groups">
         <% entity.groups.first(5).each do |group| %>
             <div class="icon">
-                <%= group.icon %>
+                <%= link_to group.icon, group %>
             </div>
         <% end %>
     </div>
