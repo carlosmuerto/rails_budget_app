@@ -21,7 +21,7 @@ RSpec.describe 'entities/index', type: :view do
   end
 
   it 'renders a list of entities' do
-    expect(rendered).to match(/Entities/)
+    expect(rendered).to match(/Transactions/)
   end
 
   it 'chech for print more'
