@@ -9,7 +9,33 @@
 
   <div class="container">
 
-    <%= render "groups/anctions", group: @group %>
+    <div class="actions">
+
+      <div class="edit">
+        <%= button_to edit_group_path(@group), method: :get do %> 
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <% end %>
+      </div>
+
+      <% if @group.entities.any? %>
+        <div class="destroy disable">
+          <div class="button_to">
+            <button disabled="disabled">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      <% else %>
+        <div class="destroy">
+          <%= button_to @group, method: :delete do %>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      <% end %>
+
+      
+
+    </div>
     
     <%= render "group_stats", group: @group %>
 
