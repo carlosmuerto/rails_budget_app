@@ -3,10 +3,13 @@
   <%= button_to new_group_path, class: "corner-floating-btn" do %>
     <i class="fa fa-plus" aria-hidden="true"></i>
   <% end %>
-  <div class="groups">
-    <% @groups.each do |group| %>
-      <%= render "groups/preview", group: group %>
-    <% end %>
+
+  <div class="container">
+    <div class="groups">
+      <% @groups.each do |group| %>
+        <%= render "groups/preview", group: group %>
+      <% end %>
+    </div>
+    <%= paginate @groups %>
   </div>
-  <%= paginate @groups %>
 </main>

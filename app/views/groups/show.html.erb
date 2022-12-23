@@ -4,17 +4,22 @@
       <i class="fa fa-plus" aria-hidden="true"></i>
     <% end %>
   </div>
+
   <h1><%= @group.icon %> <%= @group.name %></h1>
 
-  <%= render "groups/anctions", group: @group %>
-  
-  <%= render "group_stats", group: @group %>
+  <div class="container">
 
-  <div class="entities">
-    <% @entities.each do |entity| %>
-      <%= render "entities/preview", entity: entity %>
-    <% end %>
-    <%= paginate @entities %>
+    <%= render "groups/anctions", group: @group %>
+    
+    <%= render "group_stats", group: @group %>
+
+    <div class="entities">
+      <% @entities.each do |entity| %>
+        <%= render "entities/preview", entity: entity %>
+      <% end %>
+      <%= paginate @entities %>
+    </div>
+    
   </div>
 </main>
 

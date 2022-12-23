@@ -29,26 +29,4 @@
 
 body {
   font-family: 'Proxima_nova', sans-serif;
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem 10%;
-  }
-}
-
-.button-to-div {
-  all: unset;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.corner-floating-btn {
-  position: fixed;
-	width: 4rem;
-	height: 4rem;
-	bottom: 0.5rem;
-	right: 0.5rem;
 }
