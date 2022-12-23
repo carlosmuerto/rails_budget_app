@@ -1,5 +1,18 @@
+<div class="notification-bar">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+</div>
+
 <header>
-	<%= link_to "< back", go_back_path %> 
+	
+
+	<div class="back-arrow">
+		<%= link_to go_back_path do %>
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		<% end %> 
+	</div>
+	
+
 
 	<nav>
 		<% if user_signed_in? %>

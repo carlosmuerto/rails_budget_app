@@ -15,6 +15,9 @@ gem 'kaminari'
 # handle auth
 gem 'devise'
 
+# awsome icons
+gem 'font-awesome-rails'
+
 # sass precompliler
 gem 'sass-rails'
 

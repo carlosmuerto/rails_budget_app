@@ -1,14 +1,15 @@
-<h1>Groups</h1>
-
-<%= link_to "New group", new_group_path %>
-
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
+<main class="groups-index">
+  <h1>Categories</h1>
+  <%= button_to new_group_path, class: "corner-floating-btn" do %>
+    <i class="fa fa-plus" aria-hidden="true"></i>
   <% end %>
-</div>
 
-<%= paginate @groups %>
+  <div class="container">
+    <div class="groups">
+      <% @groups.each do |group| %>
+        <%= render "groups/preview", group: group %>
+      <% end %>
+    </div>
+    <%= paginate @groups %>
+  </div>
+</main>

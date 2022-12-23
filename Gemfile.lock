@@ -97,6 +97,8 @@ GEM
     e2mmap (0.1.0)
     erubi (1.11.0)
     ffi (1.15.5)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -304,6 +306,7 @@ DEPENDENCIES
   counter_culture
   debug
   devise
+  font-awesome-rails
   importmap-rails
   jbuilder
   kaminari

@@ -1,4 +1,17 @@
-<h1>Splash#index</h1>
-<p>Find me in app/views/splash/index.html.erb</p>
-<%= link_to "Sign up" , new_registration_path(User) %>
-<%= link_to "Log in" , new_session_path(User) %>
+<main class="splash-index">
+
+  <div class="notification-bar">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
+  <div class="container">
+    <div class="logo">
+      BUDGET on RAILS
+    </div>
+    <div class="links">
+      <%= link_to "Sign up" , new_registration_path(User) %>
+      <%= link_to "Log in" , new_session_path(User) %>
+    </div>  
+  </div>
+</main>

@@ -1,0 +1,18 @@
+<div class="actions">
+    <div class="edit">
+        <%= button_to edit_group_path(group), method: :get do %> 
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <% end %>
+    </div>
+    <div class="show">
+        <%= button_to group, method: :get do %> 
+            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+        <% end %>
+    </div>
+    <div class="destroy">
+        <%= button_to group, method: :delete do %>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
+    </div>
+</div>
+

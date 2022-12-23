@@ -1,22 +1,25 @@
 <main id="<%= dom_id @group %>" class="group-show">
   <div class="new-icon">
-    <%= link_to "New entity", new_group_entity_path(@group) %>
-  </div>
-  <h1><%= @group.icon %> <%= @group.name %></h1>
-  <%= render "group_stats", group: @group %>
-  <!--  GROUP ACTIONS  -->
-  <div class="entities">
-    <% @entities.each do |entity| %>
-      <%= render "entities/preview", entity: entity %>
+    <%= button_to new_group_entity_path(@group), class: "corner-floating-btn" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
     <% end %>
-    <%= paginate @entities %>
+  </div>
+
+  <h1><%= @group.icon %> <%= @group.name %></h1>
+
+  <div class="container">
+
+    <%= render "groups/anctions", group: @group %>
+    
+    <%= render "group_stats", group: @group %>
+
+    <div class="entities">
+      <% @entities.each do |entity| %>
+        <%= render "entities/preview", entity: entity %>
+      <% end %>
+      <%= paginate @entities %>
+    </div>
+    
   </div>
 </main>
 
-
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div>

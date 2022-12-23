@@ -15,13 +15,11 @@ RSpec.describe 'groups/edit', type: :view do
     render
   end
 
-  it 'renders the edit group form' do
+  it 'renders the edit Category form' do
     assert_select 'form[action=?][method=?]', group_path(group), 'post' do
       assert_select 'input[name=?]', 'group[name]'
 
       assert_select 'select[name=?]', 'group[icon]'
     end
   end
-
-  it 'chech for print more'
 end

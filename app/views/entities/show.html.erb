@@ -1,8 +1,36 @@
-<%= render @entity %>
+<main class="entity-show">
+  <h1><%= @entity.name %></h1>
 
-<div>
-  <%= link_to "Edit this entity", edit_entity_path(@entity) %> |
-  <%= link_to "Back to entities", entities_path %>
+  <div class="container">
+  
 
-  <%= button_to "Destroy this entity", @entity, method: :delete %>
-</div>
+    <div class="actions">
+      <div class="details">
+        <%= link_to "details", @entity %>
+      </div>
+      <div class="edit">
+        <%= link_to "Edit", edit_entity_path(@entity) %>
+      </div>
+      <div class="destroy">
+        <%= button_to "Destroy", @entity, method: :delete %>
+      </div>
+    </div>
+
+    <div class="amount">
+      <%= number_to_currency(@entity.amount, options = {}) %>
+    </div>
+
+    <div class="at">
+      <%= @entity.created_at.to_fs(:short) %>
+    </div>
+
+    <div class="groups">
+      <% @entity.groups.each do |group| %>
+        <div class="icon">
+          <%= link_to "#{group.icon} #{group.name}", group %>
+        </div>
+      <% end %>
+    </div>
+  
+  </div>
+</main>

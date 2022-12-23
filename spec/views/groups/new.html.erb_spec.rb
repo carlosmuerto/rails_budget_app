@@ -18,6 +18,4 @@ RSpec.describe 'groups/new', type: :view do
       assert_select 'select[name=?]', 'group[icon]'
     end
   end
-
-  it 'chech for print more'
 end
