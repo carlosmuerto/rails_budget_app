@@ -13,6 +13,8 @@ class EntitiesController < ApplicationController
   # GET /entities/new
   def new
     @groups = Group.accessible_by(current_ability).all
+    @entity = Entity.new
+    @selected_group = Group.find(params[:group_id]) if params[:group_id].present?
   end
 
   # GET /entities/1/edit

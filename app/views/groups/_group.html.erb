@@ -17,7 +17,6 @@
     <strong>entities count:</strong>
     <%= group.entities.count %>
     <% group.entities.first(5).each do |entity| %>
-      <%= render @entity %>
       <p><%= entity.name %></p>
       <p><%= entity.amount %></p>
       <p><%= entity.created_at %></p>

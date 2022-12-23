@@ -1,4 +1,6 @@
 <div id="<%= dom_id @group %>">
+  <%= link_to "New entity", new_group_entity_path(@group) %>
+
   <p>
     <strong>Name:</strong>
     <%= @group.name %>
