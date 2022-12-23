@@ -1,25 +1,17 @@
 <div id="<%= dom_id group %>">
   <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
+    <%= group.icon %> <%= group.name %>
   </p>
   <p>
-    <strong>total amount:</strong>
-    <%= group.total_amount %>
+    <strong>total amount: </strong>
+    <%= number_to_currency(group.total_amount, options = {}) %>
   </p>
 
   <div>
-    <strong>entities count:</strong>
+    <strong>entities count: </strong>
     <%= group.entities.count %>
     <% group.entities.first(5).each do |entity| %>
-      <p><%= entity.name %></p>
-      <p><%= entity.amount %></p>
-      <p><%= entity.created_at %></p>
+      <%= render "entities/preview", entity: entity %>
     <% end %>
   </div>
   
