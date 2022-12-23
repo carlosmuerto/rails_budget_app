@@ -7,12 +7,15 @@
     <%= number_to_currency(group.total_amount, options = {}) %>
   </p>
 
+  <%= render "groups/anctions", group: group %>
+
   <div>
     <strong>entities count: </strong>
     <%= group.entities.count %>
     <% group.entities.first(5).each do |entity| %>
       <%= render "entities/preview", entity: entity %>
     <% end %>
+
   </div>
   
 
