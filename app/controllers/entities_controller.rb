@@ -76,7 +76,7 @@ class EntitiesController < ApplicationController
   end
 
   def find_entities
-    @entities = Entity.accessible_by(current_ability).includes([:groups]).page(params[:page])
+    @entities = Entity.accessible_by(current_ability).order(created_at: :desc).includes([:groups]).page(params[:page])
   end
 
   # Only allow a list of trusted parameters through.

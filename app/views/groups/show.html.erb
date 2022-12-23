@@ -19,6 +19,7 @@
     <% @entities.each do |entity| %>
       <p><%= entity.name %></p>
       <p><%= entity.amount %></p>
+      <p><%= entity.created_at %></p>
     <% end %>
 
     <%= paginate @entities %>
