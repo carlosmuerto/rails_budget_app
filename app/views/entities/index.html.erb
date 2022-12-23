@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<h1>Transactions</h1>
 
-<h1>Entities</h1>
+<%= link_to "New entity", new_entity_path %>
 
 <div id="entities">
   <% @entities.each do |entity| %>
-    <%= render entity %>
-    <p>
-      <%= link_to "Show this entity", entity %>
-    </p>
+    <%= render "entities/preview", entity: entity %>
   <% end %>
 </div>
 
-<%= link_to "New entity", new_entity_path %>
+<%= paginate @entities %>

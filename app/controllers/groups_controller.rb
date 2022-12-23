@@ -8,7 +8,9 @@ class GroupsController < ApplicationController
   def index; end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @entities = @group.entities.page(params[:page])
+  end
 
   # GET /groups/new
   def new
@@ -58,11 +60,11 @@ class GroupsController < ApplicationController
   private
 
   def find_group
-    @group = Group.accessible_by(current_ability).find(params[:id])
+    @group = Group.accessible_by(current_ability).includes([:entities]).find(params[:id])
   end
 
   def find_groups
-    @groups = Group.accessible_by(current_ability).includes([:entities]).all
+    @groups = Group.accessible_by(current_ability).includes([:entities]).page(params[:page])
   end
 
   # Only allow a list of trusted parameters through.

@@ -6,6 +6,9 @@ ruby '3.1.2'
 # handle Authorization
 gem 'cancancan'
 
+# handle cache totals
+gem 'counter_culture'
+
 # handle pagination
 gem 'kaminari'
 

@@ -13,6 +13,8 @@ class EntitiesController < ApplicationController
   # GET /entities/new
   def new
     @groups = Group.accessible_by(current_ability).all
+    @entity = Entity.new
+    @selected_group = Group.find(params[:group_id]) if params[:group_id].present?
   end
 
   # GET /entities/1/edit
@@ -72,11 +74,11 @@ class EntitiesController < ApplicationController
   private
 
   def find_entity
-    @entity = Entity.accessible_by(current_ability).find(params[:id])
+    @entity = Entity.accessible_by(current_ability).includes([:groups]).find(params[:id])
   end
 
   def find_entities
-    @entities = Entity.accessible_by(current_ability).includes([:groups]).all
+    @entities = Entity.accessible_by(current_ability).order(created_at: :desc).includes([:groups]).page(params[:page])
   end
 
   # Only allow a list of trusted parameters through.

@@ -23,13 +23,18 @@
 
   <div>
     <%= form.label :groups, style: "display: block" %>
+    <%
+      pre_selected_groups = entity.groups.pluck(:id)
+      pre_selected_groups += [@selected_group.id] if @selected_group.present?
+    %>
     <%= form.select(
+      
       :groups, options_for_select(
         groups.collect{|c| ["#{c.icon} #{c.name}", c.id]},
-        entity.groups.pluck(:id)
+        pre_selected_groups
       ),
       {include_hidden: false}, 
-      {multiple: true, required: true}
+      {multiple: true, required: true, autocomplete: "off"}
     ) 
     %>
   </div>

@@ -10,8 +10,9 @@ RSpec.describe 'groups/show', type: :view do
   end
 
   before(:each) do
-    assign(:group, group)
     sign_in user
+    assign(:group, Group.find(group.id))
+    assign(:entities, Group.find(group.id).entities.page)
     render
   end
 
