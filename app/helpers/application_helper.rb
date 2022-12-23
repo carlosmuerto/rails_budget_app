@@ -7,6 +7,12 @@ module ApplicationHelper
     root_path
   end
 
+  def show_header?
+    !(controller_name == 'splash' && action_name == 'index')
+  end
+
+  private
+
   def current_page_is_from_groups_but_not_index?
     controller_name == 'groups' && !current_page?(controller: 'groups', action: 'index')
   end
@@ -16,6 +22,6 @@ module ApplicationHelper
   end
 
   def current_page_is_entity_with_group_path?
-    current_page?(controller: 'entities', action: 'new') && !current_page?(new_entity_path)
+    controller_name == 'entities' && action_name == 'new' && !current_page?(new_entity_path)
   end
 end
