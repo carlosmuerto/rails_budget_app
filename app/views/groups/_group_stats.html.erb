@@ -1,0 +1,10 @@
+<div class="stats">
+    <span class="entities-count">
+        <%= group.entities.count %>
+        <strong> entities</strong>
+    </span>
+    <span class="total-amount">
+        <strong>total amount: </strong>
+        <%= number_to_currency(group.total_amount, options = {}) %>
+    </span>
+</div>

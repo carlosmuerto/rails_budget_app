@@ -1,0 +1,54 @@
+$primary-color: #3778c2;
+
+@mixin auth-btn {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+main.splash-index {
+  padding-top: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 1rem;
+
+    .log-in {
+      @include auth-btn;
+
+      background-color: $primary-color;
+      color: white;
+    }
+
+    .sign-up {
+      @include auth-btn;
+
+      color: lightgray;
+    }
+  }
+}

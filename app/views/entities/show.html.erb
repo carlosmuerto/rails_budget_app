@@ -1,0 +1,35 @@
+<main id="<%= dom_id @entity %>" class="entity-show">
+
+  <div class="container">
+
+    <h1><%= @entity.name %></h1>
+  
+
+    <div class="actions">
+      <%= button_to edit_entity_path(@entity), class: "edit", method: :get do %> 
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
+        <%= button_to @entity, class: "destroy", method: :delete do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
+    </div>
+    
+    <div class="stats">
+      <span class="amount">
+        <%= number_to_currency(@entity.amount, options = {}) %>
+      </span>
+      <span class="created-at">
+        <%= @entity.created_at.to_fs(:short) %>
+      </span>
+    </div>
+
+    <div class="groups-icons">
+      <% @entity.groups.each do |group| %>
+        <div class="icon">
+          <%= link_to "#{group.icon} #{group.name}", group %>
+        </div>
+      <% end %>
+    </div>
+  
+  </div>
+</main>

@@ -1,0 +1,68 @@
+$primary-color: #3778c2;
+
+.notification-bar {
+  text-align: center;
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  height: 1rem;
+
+  .notice {
+    background-color: green;
+  }
+
+  .alert {
+    background-color: red;
+  }
+}
+
+header {
+  position: fixed;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  background-color: $primary-color;
+  color: white;
+  width: 100%;
+  height: 4rem;
+
+  a,
+  button {
+    all: unset;
+  }
+
+  .back-arrow {
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    position: absolute;
+    top: -120%;
+
+    .nav-item {
+      cursor: pointer;
+    }
+
+    @media (min-width: 900px) {
+      position: initial;
+      top: initial;
+    }
+  }
+
+  .actions {
+    .button_to {
+      input[type='submit'] {
+        all: unset;
+        cursor: pointer;
+      }
+    }
+  }
+}

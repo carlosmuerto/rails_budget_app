@@ -1,0 +1,25 @@
+<div class="group-preview">
+    <%= button_to group_path(group), class: "button-to-div", method: :get do %>
+
+        <div class="info">
+            <h2 class="name">
+                <%= group.icon %> <%= group.name %>
+            </h2>
+            <%= render "group_stats", group: group %>
+        </div>
+
+    <% end %>
+
+
+    <div class="entities">
+        <span>
+            <strong>entities count: </strong>
+            <%= group.entities.count %>
+        </span>
+        <div class="list">
+            <% group.entities.first(5).each do |entity| %>
+                <%= render "entities/preview", entity: entity, group: group %>
+            <% end %>
+        </div>
+    </div>
+</div>

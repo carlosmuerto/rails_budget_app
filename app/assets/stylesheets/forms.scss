@@ -1,0 +1,82 @@
+$primary-color: #3778c2;
+
+main.group-edit,
+main.group-new,
+main.entity-edit,
+main.entity-new {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .field {
+      padding: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      input[type='text'],
+      input[type='email'],
+      input[type='password'] {
+        width: 100%;
+        padding: 0.25rem;
+        height: 2rem;
+      }
+
+      &.check-box {
+        gap: 1rem;
+      }
+    }
+
+    .select {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+
+      span {
+        font-size: 0.8em;
+        color: #989da3;
+      }
+
+      #group_icon {
+        width: 5rem;
+        height: 4rem;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+
+      #entity_groups {
+        padding: 0.5rem;
+        width: 60%;
+        font-size: 1.5rem;
+      }
+    }
+
+    .links {
+      margin-top: 50%;
+      color: #989da3;
+
+      a {
+        all: unset;
+      }
+    }
+
+    input[type='submit'] {
+      width: 80%;
+      font-size: 1.5rem;
+      background-color: $primary-color;
+      border: #3778c2 1px solid;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      color: white;
+      text-align: center;
+      font-family: 'Proxima_nova', sans-serif;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+$square-length: 4rem;
+
+.group-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 3rem;
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: stretch;
+
+    .name {
+      display: flex;
+      text-align: center;
+      justify-content: start;
+      font-size: 2rem;
+      line-height: 2rem;
+      width: 100%;
+      height: 2rem;
+    }
+
+    .group-stats {
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .actions {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.25rem;
+      flex-direction: row;
+
+      .button_to {
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        line-height: 2rem;
+
+        >button {
+          width: 2rem;
+          height: 2rem;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .entities {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    span {
+      text-align: center;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem;
+      gap: 1rem;
+
+      >* {
+        width: 100%;
+      }
+    }
+  }
+}

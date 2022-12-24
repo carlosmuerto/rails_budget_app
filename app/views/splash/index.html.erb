@@ -1,0 +1,17 @@
+<main class="splash-index">
+
+  <div class="notification-bar">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
+  <div class="container">
+    <div class="logo">
+      <%= image_tag ("/assets/logo_transparent.png"), class: "My_logo" %>
+    </div>
+    <div class="links">
+      <%= link_to "Log in" , new_session_path(User), class: "log-in" %>
+      <%= link_to "Sign up" , new_registration_path(User), class: "sign-up" %>
+    </div>  
+  </div>
+</main>

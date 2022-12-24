@@ -1,0 +1,14 @@
+<main class="entities-index">
+  <%= button_to new_entity_path, class: "corner-floating-btn new-entry-btn", method: :get do %>
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  <% end %>
+
+  <div class="container">
+    <div class="entities">
+      <% @entities.each do |entity| %>
+        <%= render "entities/preview", entity: entity %>
+      <% end %>
+      </div>
+    <%= paginate @entities %>
+  </div>
+</main>

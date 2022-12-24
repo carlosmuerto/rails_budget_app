@@ -1,0 +1,46 @@
+<main id="<%= dom_id @group %>" class="group-show">
+
+  <div class="new-icon">
+    <%= button_to new_group_entity_path(@group), class: "corner-floating-btn", method: :get do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    <% end %>
+  </div>
+
+  <div class="container">
+
+    <h1><%= @group.icon %> <%= @group.name %></h1>
+
+    <div class="actions">
+
+      <%= button_to edit_group_path(@group), class: "edit", method: :get do %> 
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
+
+      <% if @group.entities.any? %>
+        <div class="button_to">
+          <button class="destroy disable" disabled="disabled">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </div>
+      <% else %>
+        <%= button_to @group, class: "destroy", method: :delete do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+
+      
+
+    </div>
+    
+    <%= render "group_stats", group: @group %>
+
+    <div class="entities">
+      <% @entities.each do |entity| %>
+        <%= render "entities/preview", entity: entity %>
+      <% end %>
+      <%= paginate @entities %>
+    </div>
+    
+  </div>
+</main>
+

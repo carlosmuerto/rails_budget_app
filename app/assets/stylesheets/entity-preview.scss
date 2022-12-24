@@ -1,0 +1,47 @@
+$square-length: 3rem;
+
+.entity-preview {
+  display: grid;
+  grid-template-columns: $square-length 1fr 1fr;
+  grid-auto-rows: 1fr 1rem;
+  height: $square-length;
+  font-size: 1.2rem;
+
+  .icon {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    height: $square-length;
+    text-align: center;
+    line-height: $square-length;
+    font-size: calc($square-length*0.8);
+  }
+
+  .name {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: bolder;
+  }
+
+  .created-at {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 0.7em;
+  }
+
+  .amount {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+}
