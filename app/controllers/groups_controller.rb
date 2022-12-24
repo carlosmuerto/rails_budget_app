@@ -5,20 +5,26 @@ class GroupsController < ApplicationController
   load_and_authorize_resource
 
   # GET /groups or /groups.json
-  def index; end
+  def index
+    @header_title = 'CATEGORIES'
+  end
 
   # GET /groups/1 or /groups/1.json
   def show
     @entities = @group.entities.page(params[:page])
+    @header_title = 'DETAILS'
   end
 
   # GET /groups/new
   def new
+    @header_title = 'NEW CATEGORY'
     @group = Group.new
   end
 
   # GET /groups/1/edit
-  def edit; end
+  def edit
+    @header_title = 'EDITING'
+  end
 
   # POST /groups or /groups.json
   def create

@@ -5,13 +5,18 @@ class EntitiesController < ApplicationController
   load_and_authorize_resource
 
   # GET /entities or /entities.json
-  def index; end
+  def index
+    @header_title = 'TRANSACTIONS'
+  end
 
   # GET /entities/1 or /entities/1.json
-  def show; end
+  def show
+    @header_title = 'DETAILS'
+  end
 
   # GET /entities/new
   def new
+    @header_title = 'NEW TRANSACTION'
     @groups = Group.accessible_by(current_ability).all
     @entity = Entity.new
     @selected_group = Group.find(params[:group_id]) if params[:group_id].present?
@@ -20,6 +25,7 @@ class EntitiesController < ApplicationController
   # GET /entities/1/edit
   def edit
     @groups = Group.accessible_by(current_ability).all
+    @header_title = 'EDITING'
   end
 
   # POST /entities or /entities.json
