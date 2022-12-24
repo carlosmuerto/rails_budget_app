@@ -1,30 +1,29 @@
-<main class="entity-show">
-  <h1><%= @entity.name %></h1>
+<main id="<%= dom_id @entity %>" class="entity-show">
 
   <div class="container">
+
+    <h1><%= @entity.name %></h1>
   
 
     <div class="actions">
-      <div class="details">
-        <%= link_to "details", @entity %>
-      </div>
-      <div class="edit">
-        <%= link_to "Edit", edit_entity_path(@entity) %>
-      </div>
-      <div class="destroy">
-        <%= button_to "Destroy", @entity, method: :delete %>
-      </div>
+      <%= button_to edit_entity_path(@entity), class: "edit", method: :get do %> 
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
+        <%= button_to @entity, class: "destroy", method: :delete do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
+    </div>
+    
+    <div class="stats">
+      <span class="amount">
+        <%= number_to_currency(@entity.amount, options = {}) %>
+      </span>
+      <span class="created-at">
+        <%= @entity.created_at.to_fs(:short) %>
+      </span>
     </div>
 
-    <div class="amount">
-      <%= number_to_currency(@entity.amount, options = {}) %>
-    </div>
-
-    <div class="at">
-      <%= @entity.created_at.to_fs(:short) %>
-    </div>
-
-    <div class="groups">
+    <div class="groups-icons">
       <% @entity.groups.each do |group| %>
         <div class="icon">
           <%= link_to "#{group.icon} #{group.name}", group %>

@@ -18,10 +18,6 @@ RSpec.describe 'groups/index', type: :view do
     render
   end
 
-  it 'renders a list of Categories' do
-    expect(rendered).to match(/Categories/)
-  end
-
   describe 'render Categories info' do
     it 'render Category icon' do
       groups.each do |group|

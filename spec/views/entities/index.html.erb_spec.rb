@@ -25,10 +25,6 @@ RSpec.describe 'entities/index', type: :view do
     render
   end
 
-  it 'renders a list of Transactions' do
-    expect(rendered).to match(/Transactions/)
-  end
-
   describe 'Transactions info' do
     it 'render Transactions name' do
       entities.each do |entity|

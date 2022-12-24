@@ -1,0 +1,48 @@
+$primary-color: #3778c2;
+
+main.auth {
+  padding-top: 0;
+
+  form {
+    header {
+      position: relative;
+      justify-content: space-between;
+
+      .actions {
+        input[type='submit'] {
+          all: unset;
+          font-size: 0.8rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .field {
+      padding: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input[type='text'],
+      input[type='email'],
+      input[type='password'] {
+        width: 100%;
+        padding: 0.25rem;
+        height: 2rem;
+      }
+
+      &.check-box {
+        gap: 1rem;
+      }
+    }
+
+    .links {
+      margin-top: 50%;
+      color: #989da3;
+
+      a {
+        all: unset;
+      }
+    }
+  }
+}

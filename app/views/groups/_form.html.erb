@@ -11,17 +11,14 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field">
+    <%= form.text_field :name, placeholder: 'name' %>
   </div>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
+  <div class="select">
     <%= form.select(:icon, options_for_select(Group::ICONS)) %>
   </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  
+  <%= form.submit %>
+  
 <% end %>

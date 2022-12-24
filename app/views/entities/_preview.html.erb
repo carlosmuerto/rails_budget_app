@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "entity-preview"%>
 
-<%= button_to @entity, class: "button-to-div" do %>
+<%= button_to entity, class: "button-to-div", method: :get do %>
     <div class="entity-preview">
         <div class="icon">
             <%= entity.groups[0].icon %>

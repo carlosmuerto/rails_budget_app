@@ -4,15 +4,15 @@
 </div>
 
 <header>
-	
-
 	<div class="back-arrow">
 		<%= link_to go_back_path do %>
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
 		<% end %> 
 	</div>
-	
 
+	<p>
+		<%= @header_title %>
+	</p>
 
 	<nav>
 		<% if user_signed_in? %>
@@ -25,9 +25,12 @@
 			<div class="nav-item">
 				<%= link_to "My Profile", edit_user_registration_path  %>
 			</div>
-			<div class="nav-item">
-				<%= button_to "Log out", destroy_user_session_path, method: :delete, class: "log-out-btn" %>
-			</div>
 		<% end %>
 	</nav>
+
+	<% if user_signed_in? %>
+		<%= button_to destroy_user_session_path, method: :delete, class: "log-out-btn" do %>
+			<i class="fa fa-sign-out" aria-hidden="true"></i>
+		<% end %>
+	<% end %>
 </header>
