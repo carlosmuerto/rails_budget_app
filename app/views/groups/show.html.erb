@@ -6,32 +6,26 @@
     <% end %>
   </div>
 
-  <h1><%= @group.icon %> <%= @group.name %></h1>
-
   <div class="container">
+
+    <h1><%= @group.icon %> <%= @group.name %></h1>
 
     <div class="actions">
 
-      <div class="edit">
-        <%= button_to edit_group_path(@group), method: :get do %> 
-          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        <% end %>
-      </div>
+      <%= button_to edit_group_path(@group), class: "edit", method: :get do %> 
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
 
       <% if @group.entities.any? %>
-        <div class="destroy disable">
-          <div class="button_to">
-            <button disabled="disabled">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </button>
-          </div>
+        <div class="button_to">
+          <button class="destroy disable" disabled="disabled">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
         </div>
       <% else %>
-        <div class="destroy">
-          <%= button_to @group, method: :delete do %>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          <% end %>
-        </div>
+        <%= button_to @group, class: "destroy", method: :delete do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
       <% end %>
 
       
