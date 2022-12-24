@@ -8,7 +8,11 @@ module ApplicationHelper
   end
 
   def show_header?
-    !(controller_name == 'splash' && action_name == 'index')
+    show_header = true
+    show_header &&= !current_page?(new_user_session_path)
+    show_header &&= !current_page?(new_user_registration_path)
+    show_header && !(controller_name == 'splash' && action_name == 'index')
+    #-------
   end
 
   private

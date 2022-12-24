@@ -1,1 +1,42 @@
 $primary-color: #3778c2;
+
+main.auth {
+  form {
+    header {
+      justify-content: space-between;
+
+      .actions {
+        input[type='submit'] {
+          all: unset;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .field {
+      padding: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input[type='email'],
+      input[type='password'] {
+        width: 100%;
+        padding: 0.25rem;
+        height: 2rem;
+      }
+
+      &.check-box {
+        gap: 1rem;
+      }
+    }
+
+    .links {
+      color: #989da3;
+
+      a {
+        all: unset;
+      }
+    }
+  }
+}
