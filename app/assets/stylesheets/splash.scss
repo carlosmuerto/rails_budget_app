@@ -26,6 +26,11 @@ main.splash-index {
 
     img {
       width: 100%;
+
+      @media (min-width: 900px) {
+        width: 40%;
+      }
+
       height: auto;
     }
   }
@@ -48,7 +53,7 @@ main.splash-index {
     .sign-up {
       @include auth-btn;
 
-      color: lightgray;
+      color: black;
     }
   }
 }
